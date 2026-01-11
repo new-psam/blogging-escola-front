@@ -8,19 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h2>Gestão de Aulas</h2>
-            <button style="width: auto; background: #666; border-radius: 8px;" onclick="logout()">Sair</button>
+            <div>
+                <span id="user-name" style="margin-right: 10px; font-weight: bold;"></span>
+                <button style="width: auto; background:#dc3545; border-radius: 8px;" onclick="logout()">Sair</button>
+            </div>
         </div>
 
-        <div style="background: #eee; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-            <h3>Nova Postagem</h3>
-            <input type="text" id="titulo" placeholder="Título do Post">
-            <textarea id="conteudo" rows="4" placeholder="Conteudo do Post"></textarea>
-            <button onclick="handleCreate()">Publicar</button>
+        <div style="display: flex;gap: 10px; background: #eee; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+            <input type="text" id="search" placeholder="Buscar por palavra-chave..." style="margin: 0;">
+            <button style="width: 100px; background: #007bff;" onclick="doSearch()">Buscar</button>
+            <button style="width: 150px; background: #28a745;" onclick="goToCreate()">Novo Post</button>
         </div>
 
-        <div id="posts-list"></div>
+        <div id="posts-list">
+            <p>Carregando postagens...</p>
+        </div>
     </div>
 
     <script src="js/api.js"></script>

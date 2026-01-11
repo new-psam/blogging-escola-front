@@ -1,0 +1,35 @@
+name: CI Frontend Blogging Escola
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    test-frontend:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [18.x]
+
+        steps:
+        #1 baixa o código do repositório
+        - name: Checkout do código
+          uses: actions/checkout@v4
+
+        #2 Instala o Node.js
+        - name: Setup Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.node-version }}
+            cache: 'npm'
+
+        # 3 Instala as dependências (Jest, JSDOM)
+        - name: Instalar dependências
+          run: npm ci
+
+        # 4 Roda os testes (api.test.js e dom.test.js)
+        - name: Rodar Testes
+          run: npm test

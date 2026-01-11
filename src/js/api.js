@@ -31,6 +31,17 @@ async function getPosts() {
 
 }
 
+async function getPostById(id) {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${BASE_URL}/posts/${id}`, {
+        method: 'GET',
+        headers: { 
+            'Authorization': `Bearer ${token}`
+        }
+    });
+    return response.json();
+}
+
 async function createPost(postData) {
     const token = localStorage.getItem('token');
     const response = await fetch(`${BASE_URL}/posts`, {
@@ -42,6 +53,19 @@ async function createPost(postData) {
         body: JSON.stringify(postData)
     });
     return response; // retorna a resposta completa para checar status
+}
+
+async function updatePost(id, postData) {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${BASE_URL}/posts/${id}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(postData)
+    });
+    return response;
 }
 
 async function deletePost(id) {
@@ -64,5 +88,5 @@ async function searchPosts(query) {
 
 //Exportação para o Jest funcionar (Node.js)
 if (typeof module !== 'undefined') {
-    module.exports = { login, register, getPosts, createPost, deletePost, searchPosts };
+    module.exports = { login, register, getPosts, createPost, updatePost, deletePost, searchPosts };
 }

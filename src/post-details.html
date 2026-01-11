@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura do Post</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <button onclick="goBack()" style="width: auto; margin-bottom: 20px; background: #666;">&larr; Voltar</button>
+
+        <div id="loading" style="text-align: center; color: #668;">Carregando conteúdo...</div>
+
+        <div id="post-content" class="hidden">
+            <h1 id="detail-title" style="color: #333; margin-bottom: 5px;"></h1>
+
+            <p class="post-meta" style="border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <strong>Autor:</strong> <span id="detail-author"></span>
+                <strong>Data:</strong> <span id="detail-date"></span>
+            </p>
+
+            <div id="detail-body" style="line-height: 1.8; font-size: 1.1em; color: #444; white-space: pre-wrap"></div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/post-details.js"></script>
+</body>
+</html>

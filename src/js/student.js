@@ -11,8 +11,8 @@ function renderPosts(posts) {
     const list = document.getElementById('posts-list');
     list.innerHTML = '';
 
-    if (posts.length === 0) {
-        list.innerHTML = '<p>Nenhum post encontrado.</p>';
+    if (!posts || posts.length === 0) {
+        list.innerHTML = '<p style="text-align:center; color:#666;">Nenhum post encontrado.</p>';
         return;
     }
 
@@ -20,7 +20,9 @@ function renderPosts(posts) {
         const div = document.createElement('div');
         div.className = 'post-card';
         div.innerHTML = `
-            <div class="post-title">${post.titulo}</div>
+            <a href="post-details.html?id=${post._id}" class="post-title" style="text-decoration:none; color:#333;display:block;">
+                ${post.titulo}
+            </a>
             <div class="post-meta">Por:${post.autor} | Em: ${new Date(post.dataCriacao).toLocaleDateString()}</div>
             <div class="post-content">${post.conteudo}</div>
         `;
@@ -47,3 +49,8 @@ async function doSearch() {
 
 // Carrega posts ao abrir a página
 window.onload = loadPosts;
+
+// Exportações para testes (Npde.js)
+if(typeof module !== 'undefined') {
+    module.exports = { renderPosts };
+}
