@@ -1,0 +1,21 @@
+{
+  "name": "blogging-escola-front",
+  "version": "1.0.0",
+  "description": "Front End para consumir o API de Blog de POsts Educacionais",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Marcelino P Santos",
+  "license": "ISC",
+  "type": "commonjs",
+  "jest": {
+    "testEnvironment": "jsdom",
+    "verbose": true
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}

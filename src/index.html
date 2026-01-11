@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Escola - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Acesso Blogging Escolar</h2>
+
+        <div id="login-form">
+            <h3>Login</h3>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="senha" placeholder="Senha">
+            <button onclick="handleLogin()">Entrar</button>
+            <p>Não tem conta? <a href="#" onclick="toggleForms()">Cadastre-se</a></p>
+        </div>
+
+        <div id="register-form" class="hidden">
+            <h3>Cadastro</h3>
+            <input type="text" id="reg-nome" placeholder="Nome Completo">
+            <input type="email" id="reg-email" placeholder="Email">
+            <input type="password" id="reg-senha" placeholder="Senha">
+            <select id="reg-role">
+                <option value="aluno">Aluno</option>
+                <option value="professor">Professor</option>
+            </select>
+            <button onclick="handleRegister()">Cadastrar</button>
+            <p>Já tem conta? <a href="#" onclick="toggleForms()">Fazer Login</a></p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Mural de Publicações</h2>
+            <button style="width: auto; background: #666; border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" onclick="logout()">Sair</button>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="search" placeholder="Buscar por palavra-chave...">
+            <button style="width: 100px; font-size: 1em;" onclick="doSearch()">Buscar</button>
+        </div>
+
+        <div id="posts-list">
+            <p>Carregando...</p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/student.js"></script>
+</body>
+</html>

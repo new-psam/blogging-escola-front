@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Professor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Gestão de Aulas</h2>
+            <button style="width: auto; background: #666; border-radius: 8px;" onclick="logout()">Sair</button>
+        </div>
+
+        <div style="background: #eee; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <h3>Nova Postagem</h3>
+            <input type="text" id="titulo" placeholder="Título do Post">
+            <textarea id="conteudo" rows="4" placeholder="Conteudo do Post"></textarea>
+            <button onclick="handleCreate()">Publicar</button>
+        </div>
+
+        <div id="posts-list"></div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/teacher.js"></script>
+</body>
+</html>

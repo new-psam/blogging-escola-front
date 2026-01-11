@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Postagem</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 id="page-title">Nova Postagem</h2>
+            <button onclick="goBack()" style="width: auto; background: #666;">Cancelar</button>
+        </div>
+            
+        <div style="background: #fff;padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+            <label for="titulo">Título da Aula</label>
+            <input type="text" id="titulo" placeholder="Ex: Introdução à História">
+
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" rows="14" placeholder="Escreva o conteúdo da aula aqui..."></textarea>
+
+            <button onclick="handleSave()" id="btn-save" style="margin-top: 15px;">Salvar Publicação</button>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/post-form.js"></script>
+</body>
+</html>
